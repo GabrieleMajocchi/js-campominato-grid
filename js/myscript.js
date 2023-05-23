@@ -1,20 +1,24 @@
 // ? recupero il wrapper
 const gridElement = document.getElementById('grid');
 
+let cells = 100;
 let gamedifficulty = 'easy';
-let cells;
 
-if(gamedifficulty === 'easy'){
-    cells = 100;
-}else if(gamedifficulty === 'medium'){
-    cells = 81;
-}else if(gamedifficulty === 'hard'){
-    cells = 49;
+const diff = document.getElementById("diff");
+diff.addEventListener('click', function(){
+    gamedifficulty = diff.options[diff.selectedIndex].text;
+
+    if(gamedifficulty === 'easy'){
+        cells = 100;
+    }else if(gamedifficulty === 'medium'){
+        cells = 81;
+    }else if(gamedifficulty === 'hard'){
+        cells = 49;
+    }
 }
+)
 
-
-
-const Play = document.querySelector('button')
+const Play = document.querySelector('#play')
 
 Play.addEventListener('click', 
     function(){
